@@ -1,0 +1,13 @@
+﻿global using Microsoft.Extensions.DependencyInjection;
+global using YouLead.Core.Entities.Abstractions;
+global using Microsoft.EntityFrameworkCore;
+global using YouLead.Core.Entities;
+global using Riok.Mapperly.Abstractions;
+global using YouLead.Core.Commands.Contacts;
+global using YouLead.Core.Mappers;
+global using Mediator;
+global using YouLead.Core.Abstractions;
+global using System.Text.Json.Serialization;
+global using YouLead.Core.Abstractions.Exceptions;
+global using YouLead.Core.Exceptions.Contacts;
+global using YouLead.Core.DTOs;

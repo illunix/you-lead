@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouLead.Api", "apps\you-lea
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouLead.Core", "libs\you-lead-core\YouLead.Core.csproj", "{B09BEB1A-0E9E-4B27-A43A-DBE5A61D8426}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{384599FB-4778-4774-81D1-E47988B507BA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouLeadInfrastructure", "libs\you-lead-infrastructure\YouLeadInfrastructure.csproj", "{6745BEC9-69B1-400A-9DFD-469004E8F08F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouLead.Infrastructure", "libs\you-lead-infrastructure\YouLead.Infrastructure.csproj", "{6745BEC9-69B1-400A-9DFD-469004E8F08F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,8 +33,5 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C43CD4C1-1970-45FE-B0C5-F4FC1D8E568D}
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{6745BEC9-69B1-400A-9DFD-469004E8F08F} = {384599FB-4778-4774-81D1-E47988B507BA}
 	EndGlobalSection
 EndGlobal

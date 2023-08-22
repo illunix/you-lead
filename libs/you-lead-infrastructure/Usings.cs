@@ -1,0 +1,10 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using YouLead.Core.Entities;
+global using Microsoft.Data.SqlClient;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using YouLead.Core.Abstractions;
+global using YouLead.Infrastructure.DAL;
+global using YouLead.Infrastructure.Options;
+global using YouLead.Core.Abstractions.DbContext;

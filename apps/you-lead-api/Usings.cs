@@ -1,0 +1,15 @@
+﻿global using YouLead.Api;
+global using YouLead.Core;
+global using YouLead.Infrastructure;
+global using System.Net;
+global using YouLead.Api.Exceptions.Models;
+global using System.Collections.Concurrent;
+global using Humanizer;
+global using YouLead.Api.Exceptions.Mapper.Abstractions;
+global using YouLead.Core.Abstractions.Exceptions;
+global using YouLead.Api.Exceptions.Mapper;
+global using YouLead.Api.Exceptions.Middlewares;
+global using Mediator;
+global using YouLead.Core.Queries.Contacts;
+global using YouLead.Core.DTOs;
+global using YouLead.Api.Endpoints;
