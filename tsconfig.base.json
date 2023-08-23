@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@you-lead/generated/you-lead-api-types": [
-        "libs/generated/you-lead-api-types/src/index.ts"
+      "@you-lead/web/shared/api-clients": [
+        "libs/web/shared/api-clients/src/index.ts"
       ]
     }
   },

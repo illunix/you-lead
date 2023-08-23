@@ -15,3 +15,4 @@ global using YouLead.Core.DTOs;
 global using YouLead.Api.Endpoints;
 global using FluentValidation;
 global using YouLead.Core.Commands.Contacts;
+global using YouLead.Api.Filters;

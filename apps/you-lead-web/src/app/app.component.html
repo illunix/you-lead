@@ -1,0 +1,52 @@
+<div class="p-5">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom mt-4">
+    <h4>Contacts</h4>
+  </div>
+  <div class="row ">
+    <div class="col-auto">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search by email" (keyup)="onKeySearch($event)">
+        <button class="btn btn-outline-success" type="submit" (click)="onSearch($event)">Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="row mt-1 p-2">
+    <table *ngIf="contactsData$ | async as contactsData; else spinner" class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Full name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone number</th>
+          <th scope="col">Address</th>
+          <th scope="col">City</th>
+          <th scope="col">Zip code</th>
+          <th><i-feather (click)="onShowAddContactDialog()" name="plus-circle" class="float-end"></i-feather></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contact of contactsData.items">
+          <th>{{ contact.firstName}} {{ contact.lastName }}</th>
+          <th>{{ contact.email }}</th>
+          <th>{{ contact.phoneNumber }}</th>
+          <th>{{ contact.address }}</th>
+          <th>{{ contact.city }}</th>
+          <th>{{ contact.zipCode }}</th>
+          <th><i-feather (click)="onShowEditContactDialog(contact)" name="edit-2" class="float-end"></i-feather></th>
+        </tr>
+      </tbody>
+    </table>
+    <mat-paginator #paginator
+      (page)="getContacts($event)"
+      [length]="pageEvent.length"
+      [pageSize]="pageEvent.pageSize"
+      showFirstLastButtons="false"
+      hidePageSize="true"
+      [pageIndex]="pageEvent.pageIndex">
+    </mat-paginator>
+    <ng-template #spinner>
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status"></div>
+      </div>
+    </ng-template>
+  </div>
+</div>

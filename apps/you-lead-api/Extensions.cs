@@ -5,6 +5,7 @@ internal static class Extensions
     public static IServiceCollection AddApi(this IServiceCollection services)
     {
         services.AddErrorHandling();
+        services.AddCors();
         services.AddSwagger();
 
         services.AddValidatorsFromAssemblyContaining<Program>();
@@ -15,6 +16,7 @@ internal static class Extensions
     public static WebApplication UseApi(this WebApplication app)
     {
         app.UseErrorHandling();
+        app.UseCors("web-client");
 
         if (app.Environment.IsDevelopment())
         {
@@ -34,6 +36,22 @@ internal static class Extensions
 
     private static IApplicationBuilder UseErrorHandling(this IApplicationBuilder app)
         => app.UseMiddleware<ErrorHandlerMiddleware>();
+
+    private static IServiceCollection AddCors(this IServiceCollection services)
+        => services.AddCors(q =>
+        {
+            q.AddPolicy(
+                "web-client",
+                q =>
+                {
+                    q.AllowCredentials();
+                    q
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .WithOrigins("http://localhost:4200");
+                }
+            );
+        });
 
     private static IServiceCollection AddSwagger(this IServiceCollection services)
         => services

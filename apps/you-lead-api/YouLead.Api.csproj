@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,8 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\libs\you-lead-core\YouLead.Core.csproj" />
-    <ProjectReference Include="..\..\libs\you-lead-infrastructure\YouLead.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\libs\api\you-lead-core\YouLead.Core.csproj" />
+    <ProjectReference Include="..\..\libs\api\you-lead-infrastructure\YouLead.Infrastructure.csproj" />
   </ItemGroup>
+
 
 </Project>

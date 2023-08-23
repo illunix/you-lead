@@ -1,0 +1,52 @@
+<h2 mat-dialog-title>Add Contact</h2>
+<mat-dialog-content>
+    <form [formGroup]="form">
+        <div class="row">
+            <div class="col">
+                <div class="mb-3">
+                    <label class="form-label">First name</label>
+                    <input type="text" class="form-control" formControlName="firstName" placeholder="Enter first name" [class.form-control-danger]="f.city.touched && !f.city.valid">
+                    <div *ngIf="f.firstName.touched && !f.firstName.valid" class="text-danger fs-6 mt-1">First name is a required field</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Last name</label>
+                    <input type="text" class="form-control" formControlName="lastName" placeholder="Enter last name" [class.form-control-danger]="f.lastName.touched && !f.lastName.valid">
+                    <div *ngIf="f.lastName.touched && !f.lastName.valid" class="text-danger fs-6 mt-1">Last name is a required field</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="text" class="form-control" formControlName="email" placeholder="Enter email" [class.form-control-danger]="f.email.touched && !f.email.valid">
+                    <div *ngIf="f.email.touched && !f.email.valid" class="text-danger fs-6 mt-1">Email is a required field</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phone number</label>
+                    <input type="text" class="form-control" formControlName="phoneNumber" placeholder="Enter phone number" [class.form-control-danger]="f.phoneNumber.touched && !f.phoneNumber.valid">
+                    <div *ngIf="f.phoneNumber.touched && !f.phoneNumber.valid" class="text-danger fs-6 mt-1">Phone number is a required field</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="mb-3">
+                    <label class="form-label">Address</label>
+                    <input type="text" class="form-control" formControlName="address" placeholder="Enter address" [class.form-control-danger]="f.address.touched && !f.address.valid">
+                    <div *ngIf="f.address.touched && !f.address.valid" class="text-danger fs-6 mt-1">Address is a required field</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">City</label>
+                    <input type="text" class="form-control" formControlName="city" placeholder="Enter city" [class.form-control-danger]="f.city.touched && !f.city.valid">
+                    <div *ngIf="f.city.touched && !f.city.valid" class="text-danger fs-6 mt-1">City is a required field</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">ZIP code</label>
+                    <input type="text" class="form-control" formControlName="zipCode" placeholder="Enter ZIP code" [class.form-control-danger]="f.zipCode.touched && !f.zipCode.valid">
+                    <div *ngIf="f.zipCode.touched && !f.zipCode.valid" class="text-danger fs-6 mt-1">ZIP Code is a required field</div>
+                </div>  
+            </div>
+        </div>
+        
+       
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button type="button" class="btn btn-secondary" (click)="onClose()">Close</button>
+    <button type="button" class="btn btn-primary" (click)="onSaveContact()">Save</button>
+</mat-dialog-actions>

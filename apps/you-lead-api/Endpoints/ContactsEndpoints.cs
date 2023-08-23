@@ -11,7 +11,7 @@ internal static class ContactsEndpoints
                 GetContacts
             )
             .WithName("Get contacts")
-            .Produces<IReadOnlyList<ContactDto>>()
+            .Produces<PagedDto<ContactDto>>()
             .Produces(StatusCodes.Status400BadRequest);
 
         group.MapPost(
@@ -20,7 +20,10 @@ internal static class ContactsEndpoints
             )
             .WithName("Create contact")
             .Produces(StatusCodes.Status201Created)
-            .Produces(StatusCodes.Status400BadRequest);
+            .Produces(StatusCodes.Status400BadRequest)
+            .Produces(StatusCodes.Status500InternalServerError)
+            .ProducesValidationProblem(StatusCodes.Status422UnprocessableEntity)
+            .AddEndpointFilter<ValidationFilter<CreateContactCommand>>();
 
         group.MapPut(
                 "/{id}",
@@ -28,7 +31,10 @@ internal static class ContactsEndpoints
             )
             .WithName("Update contact")
             .Produces(StatusCodes.Status204NoContent)
-            .Produces(StatusCodes.Status400BadRequest);
+            .Produces(StatusCodes.Status400BadRequest)
+            .Produces(StatusCodes.Status500InternalServerError)
+            .ProducesValidationProblem(StatusCodes.Status422UnprocessableEntity)
+            .AddEndpointFilter<ValidationFilter<CreateContactCommand>>();
 
         group.WithTags("Contacts");
 
@@ -37,13 +43,19 @@ internal static class ContactsEndpoints
 
     private static async Task<IResult> GetContacts(
         IMediator mediator,
-        [AsParameters] GetContactsQuery qry
+        string? email,
+        int pageNumber = 0,
+        int pageSize = 10
     )
-        => Results.Ok(await mediator.Send(qry));
+        => Results.Ok(await mediator.Send(new GetContactsQuery(
+            email,
+            pageNumber,
+            pageSize
+        )));
 
     private static async Task<IResult> CreateContact(
-        IMediator mediator,
-        CreateContactCommand qry
+        CreateContactCommand qry,
+        IMediator mediator
     )
     {
         await mediator.Send(qry);
@@ -52,9 +64,9 @@ internal static class ContactsEndpoints
     }
 
     private static async Task<IResult> UpdateContact(
-        IMediator mediator,
-        Guid id,
-        UpdateContactCommand qry
+        UpdateContactCommand qry,
+        int id,
+        IMediator mediator
     )
     {
         await mediator.Send(qry with { Id = id });

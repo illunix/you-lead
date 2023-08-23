@@ -1,0 +1,31 @@
+{
+  "descriptionHash": "C6888C508E484F51673BD5FF3604C4F6AB1AAB2B64BD197ABCA07EEA1A2971EE54E241F7B2EFAA5E059E31974AA6FF1CB0FD18BB9326D9A61BDF32EFAF48E394",
+  "descriptionLocation": "C:\\Users\\cros4\\Desktop\\you-lead\\swagger-specs\\you-lead.api.json",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.5.1",
+  "clientClassName": "YouLeadApiClientGenerated",
+  "clientNamespaceName": "ApiSdk",
+  "language": "TypeScript",
+  "usesBackingStore": false,
+  "includeAdditionalData": true,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "text/plain",
+    "application/x-www-form-urlencoded",
+    "multipart/form-data"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": []
+}

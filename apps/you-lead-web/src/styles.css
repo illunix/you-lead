@@ -1,0 +1,47 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.form-label {
+    color: black;
+}
+
+.snackbar-success {
+    padding-top: 4em;
+    --mat-mdc-snack-bar-button-color: transparent;
+    --mdc-snackbar-container-color: #28a745;
+    --mdc-snackbar-supporting-text-color: white;
+}
+
+.snackbar-danger {
+    padding-top: 4em;
+    --mat-mdc-snack-bar-button-color: transparent;
+    --mdc-snackbar-container-color: #dc3545;
+    --mdc-snackbar-supporting-text-color: white;
+}
+
+.dialog-container {
+    .mat-mdc-dialog-container .mdc-dialog__title {
+        font-size: 25px;
+    }
+
+    .mat-mdc-dialog-container .mat-mdc-dialog-content {
+        color: black;
+    }
+
+    .mat-mdc-dialog-container .mat-mdc-dialog-actions {
+        float: right;
+    }
+
+    .mat-mdc-dialog-container .mat-mdc-dialog-actions button {
+        margin-right: 0.8em;
+        border-radius: 8px;
+    }
+}
+
+.form-control-danger {
+    box-shadow: 0 0 0 0.05rem rgba(255, 0, 0, 0.696);
+}
+
+.form-control-danger:focus {
+    box-shadow: 0 0 0 0.05rem rgba(116, 11, 235, 0.696);
+}
