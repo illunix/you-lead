@@ -13,3 +13,5 @@ global using Mediator;
 global using YouLead.Core.Queries.Contacts;
 global using YouLead.Core.DTOs;
 global using YouLead.Api.Endpoints;
+global using FluentValidation;
+global using YouLead.Core.Commands.Contacts;

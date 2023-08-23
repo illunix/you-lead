@@ -7,6 +7,8 @@ internal static class Extensions
         services.AddErrorHandling();
         services.AddSwagger();
 
+        services.AddValidatorsFromAssemblyContaining<Program>();
+
         return services;
     }
 

@@ -32,7 +32,8 @@ public static class Extensions
                 DataSource = options("server"),
                 InitialCatalog = options("database"),
                 UserID = options("user"),
-                Password = options("password")
+                Password = options("password"),
+                TrustServerCertificate = true
             };
 
             q.UseSqlServer(connStrBuilder.ToString());

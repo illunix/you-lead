@@ -1,7 +1,7 @@
 ﻿namespace YouLead.Core.Commands.Contacts.Handlers;
 
 [PrimaryConstructor]
-internal sealed partial class UpdateContactCommandHandler : ICommandHandler<UpdateContactCommand>
+public sealed partial class UpdateContactCommandHandler : ICommandHandler<UpdateContactCommand>
 {
     private readonly IYouLeadDbContext _ctx;
     private readonly ContactMapper _mapper;

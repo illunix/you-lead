@@ -11,3 +11,5 @@ global using System.Text.Json.Serialization;
 global using YouLead.Core.Abstractions.Exceptions;
 global using YouLead.Core.Exceptions.Contacts;
 global using YouLead.Core.DTOs;
+global using System.Linq.Expressions;
+global using YouLead.Core.Predicate;

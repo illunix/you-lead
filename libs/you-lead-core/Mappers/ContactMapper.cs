@@ -1,7 +1,7 @@
 ﻿namespace YouLead.Core.Mappers;
 
 [Mapper]
-internal sealed partial class ContactMapper
+public sealed partial class ContactMapper
 {
     public partial ContactDto MapContactToContactDto(Contact contact);
     public partial Contact MapCreateContactCommandToContact(CreateContactCommand cmd);
