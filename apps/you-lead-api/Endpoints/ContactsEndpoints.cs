@@ -34,7 +34,7 @@ internal static class ContactsEndpoints
             .Produces(StatusCodes.Status400BadRequest)
             .Produces(StatusCodes.Status500InternalServerError)
             .ProducesValidationProblem(StatusCodes.Status422UnprocessableEntity)
-            .AddEndpointFilter<ValidationFilter<CreateContactCommand>>();
+            .AddEndpointFilter<ValidationFilter<UpdateContactCommand>>();
 
         group.WithTags("Contacts");
 
